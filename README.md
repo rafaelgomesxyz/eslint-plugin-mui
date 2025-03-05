@@ -39,7 +39,14 @@ Then configure the rules you want to use under the rules section.
 ## Supported Rules
 
 - [sort-sx-keys](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
+- [prefer-named-imports](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
 
 ## Credits
 
 This plugin is based on eslint-plugin-sort-keys-fix (https://github.com/leo-buneev/eslint-plugin-sort-keys-fix).
+
+## Contributors
+
+- [rafaelgomesxyz](https://github.com/rafaelgomesxyz)
+- [rkristelijn](https://github.com/rkristelijn)
+
