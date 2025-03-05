@@ -11,6 +11,9 @@ const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true, // Enable JSX parsing
+    },
   },
 });
 
@@ -25,23 +28,70 @@ ruleTester.run('prefer-named-imports', rule, {
     {
       code: `import SomethingElse from 'some-other-library';`, // Should be valid
     },
+    {
+      code: `
+        import { Add } from '@mui/icons-material';
+        const MyComponent = () => <Add />;
+      `, // JSX usage is already correct
+    },
   ],
 
   invalid: [
     {
-      code: `import CloseIcon from '@mui/icons-material/Close';`,
-      output: `import { Close } from '@mui/icons-material';`,
-      errors: [{ message: "Use named imports for MUI icons instead of default imports." }],
+      code: `
+        import CloseIcon from '@mui/icons-material/Close';
+        const MyComponent = () => <CloseIcon />;
+      `,
+      output: `
+        import { Close } from '@mui/icons-material';
+        const MyComponent = () => <Close />;
+      `,
+      errors: [
+        { message: "Use named imports for MUI icons instead of default imports." },
+        { message: "Replace <CloseIcon /> with <Close />" },
+      ],
     },
     {
-      code: `import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';`,
-      output: `import { ChevronLeft } from '@mui/icons-material';`,
-      errors: [{ message: "Use named imports for MUI icons instead of default imports." }],
+      code: `
+        import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+        const MyComponent = () => <ChevronLeftIcon />;
+      `,
+      output: `
+        import { ChevronLeft } from '@mui/icons-material';
+        const MyComponent = () => <ChevronLeft />;
+      `,
+      errors: [
+        { message: "Use named imports for MUI icons instead of default imports." },
+        { message: "Replace <ChevronLeftIcon /> with <ChevronLeft />" },
+      ],
     },
     {
-      code: `import ChevronRightIcon from '@mui/icons-material/ChevronRight';`,
-      output: `import { ChevronRight } from '@mui/icons-material';`,
-      errors: [{ message: "Use named imports for MUI icons instead of default imports." }],
+      code: `
+        import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+        const MyComponent = () => <ChevronRightIcon />;
+      `,
+      output: `
+        import { ChevronRight } from '@mui/icons-material';
+        const MyComponent = () => <ChevronRight />;
+      `,
+      errors: [
+        { message: "Use named imports for MUI icons instead of default imports." },
+        { message: "Replace <ChevronRightIcon /> with <ChevronRight />" },
+      ],
+    },
+    {
+      code: `
+        import AddIcon from '@mui/icons-material/Add';
+        const MyComponent = () => <AddIcon />;
+      `,
+      output: `
+        import { Add } from '@mui/icons-material';
+        const MyComponent = () => <Add />;
+      `,
+      errors: [
+        { message: "Use named imports for MUI icons instead of default imports." },
+        { message: "Replace <AddIcon /> with <Add />" },
+      ],
     },
   ],
 });
