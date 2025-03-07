@@ -1,6 +1,6 @@
 /**
  * @fileoverview Tests for `no-literal-colors` rule
- * @author rkristelijn
+ * @autor rkristelijn
  */
 
 'use strict';
@@ -34,7 +34,7 @@ ruleTester.run('no-literal-colors', rule, {
         var Header = (
           <Box
             sx={{
-              backgroundColor: '#FFF',
+              backgroundColor: 'primary.main',
             }}
           />
         );
@@ -57,7 +57,7 @@ ruleTester.run('no-literal-colors', rule, {
                 {
                     messageId: 'noLiteralColors',
                     data: {
-                        value: '#FFF',
+                        value: '#fff',
                     },
                 },
             ],
@@ -77,6 +77,63 @@ ruleTester.run('no-literal-colors', rule, {
                     messageId: 'noLiteralColors',
                     data: {
                         value: '#123456',
+                    },
+                },
+            ],
+        },
+        {
+            code: `
+        var Header = (
+          <Box
+            sx={{
+              color: 'red',
+            }}
+          />
+        );
+      `,
+            errors: [
+                {
+                    messageId: 'noLiteralColors',
+                    data: {
+                        value: 'red',
+                    },
+                },
+            ],
+        },
+        {
+            code: `
+        var Header = (
+          <Box
+            sx={{
+              color: 'black',
+            }}
+          />
+        );
+      `,
+            errors: [
+                {
+                    messageId: 'noLiteralColors',
+                    data: {
+                        value: 'black',
+                    },
+                },
+            ],
+        },
+        {
+            code: `
+        var Header = (
+          <Box
+            sx={{
+              color: 'aliceblue',
+            }}
+          />
+        );
+      `,
+            errors: [
+                {
+                    messageId: 'noLiteralColors',
+                    data: {
+                        value: 'aliceblue',
                     },
                 },
             ],
