@@ -1,6 +1,8 @@
 # eslint-plugin-mui
 
-Custom ESLint rules for MUI
+Custom ESLint rules for MUI. 
+
+> Note: This is a fork of [eslint-plugin-mui](https://github.com/rafaelgomesxyz/eslint-plugin-mui) that seems to be not being worked on.
 
 ## Installation
 
@@ -10,36 +12,37 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm install eslint --save-dev
 ```
 
-Next, install `eslint-plugin-mui`:
+Next, install `@rkristelijn/eslint-plugin-mui`:
 
 ```sh
-npm install eslint-plugin-mui --save-dev
+npm install @rkristelijn/eslint-plugin-mui --save-dev
 ```
 
 ## Usage
 
-Add `mui` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `mui` to the plugins section of your `eslint.config.cjs` configuration file.
 
-```json
-{
-	"plugins": ["mui"]
-}
-```
+```ts
+const muiPlugin = require('eslint-plugin-mui');
 
-Then configure the rules you want to use under the rules section.
+module.exports = [
+	plugins: {
+    mui: muiPlugin,
+  },
+	rules: {
+      // adding the recommended rules
+      'mui/sort-sx-keys': 'warn',
+      'mui/prefer-named-imports': 'warn',
+      'mui/no-literal-colors': 'warn',
+    },
+]
 
-```json
-{
-	"rules": {
-		"mui/rule-name": 2
-	}
-}
-```
 
 ## Supported Rules
 
-- [sort-sx-keys](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
-- [prefer-named-imports](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
+- [sort-sx-keys](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
+- [prefer-named-imports](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
+- [no-literal-color](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-literal-color.md)
 
 ## Credits
 
@@ -47,6 +50,6 @@ This plugin is based on eslint-plugin-sort-keys-fix (https://github.com/leo-bune
 
 ## Contributors
 
-- [rafaelgomesxyz](https://github.com/rafaelgomesxyz)
 - [rkristelijn](https://github.com/rkristelijn)
+- [rafaelgomesxyz](https://github.com/rafaelgomesxyz) (original author)
 
