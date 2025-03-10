@@ -30,11 +30,11 @@ module.exports = [
     mui: muiPlugin,
   },
 	rules: {
-      // adding the recommended rules
-      'mui/sort-sx-keys': 'warn',
-      'mui/prefer-named-imports': 'warn',
-      'mui/no-literal-colors': 'warn',
-    },
+		// adding the recommended rules
+		'mui/sort-sx-keys': 'warn',
+		'mui/prefer-named-imports': 'warn',
+		'mui/no-literal-colors': 'warn',
+	},
 ]
 ```
 
