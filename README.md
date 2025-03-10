@@ -1,6 +1,6 @@
 # eslint-plugin-mui
 
-Custom ESLint rules for MUI. 
+Custom ESLint rules for MUI.
 
 > Note: This is a fork of [eslint-plugin-mui](https://github.com/rafaelgomesxyz/eslint-plugin-mui) that seems to be not being worked on.
 
@@ -26,7 +26,7 @@ Add `mui` to the plugins section of your `eslint.config.cjs` configuration file.
 const muiPlugin = require('eslint-plugin-mui');
 
 module.exports = [
-	plugins: {
+  plugins: {
     mui: muiPlugin,
   },
 	rules: {
@@ -36,7 +36,7 @@ module.exports = [
       'mui/no-literal-colors': 'warn',
     },
 ]
-
+```
 
 ## Supported Rules
 
@@ -52,4 +52,3 @@ This plugin is based on eslint-plugin-sort-keys-fix (https://github.com/leo-bune
 
 - [rkristelijn](https://github.com/rkristelijn)
 - [rafaelgomesxyz](https://github.com/rafaelgomesxyz) (original author)
-
