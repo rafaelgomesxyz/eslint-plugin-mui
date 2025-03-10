@@ -1,18 +1,18 @@
 {
-	"name": "eslint-plugin-mui",
-	"version": "0.1.1",
-	"description": "Custom ESLint rules for MUI",
+	"name": "@rkristelijn/eslint-plugin-mui",
+	"version": "1.0.0",
+	"description": "Extended custom ESLint rules for MUI",
 	"keywords": [
 		"eslint",
 		"eslint-plugin",
 		"mui",
 		"material-ui"
 	],
-	"homepage": "https://github.com/rafaelgomesxyz/eslint-plugin-mui",
-	"bugs": "https://github.com/rafaelgomesxyz/eslint-plugin-mui/issues",
-	"author": "rafaelgomesxyz",
+	"homepage": "https://github.com/rkristelijn/eslint-plugin-mui",
+	"bugs": "https://github.com/rkristelijn/eslint-plugin-mui/issues",
+	"author": "rkristelijn",
 	"main": "lib/index.js",
-	"repository": "github:rafaelgomesxyz/eslint-plugin-mui",
+	"repository": "github:rkristelijn/eslint-plugin-mui",
 	"scripts": {
 		"lint": "eslint .",
 		"test": "mocha tests --recursive"
