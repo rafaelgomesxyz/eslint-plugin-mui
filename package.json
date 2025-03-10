@@ -12,7 +12,6 @@
 	"bugs": "https://github.com/rkristelijn/eslint-plugin-mui/issues",
 	"author": "rkristelijn",
 	"main": "lib/index.js",
-	"repository": "github:rkristelijn/eslint-plugin-mui",
 	"scripts": {
 		"lint": "eslint .",
 		"test": "mocha tests --recursive"
@@ -32,5 +31,9 @@
 	"engines": {
 		"node": "12.x || 14.x || >= 16"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:rkristelijn/eslint-plugin-mui.git"
+	}
 }
