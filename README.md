@@ -36,6 +36,8 @@ module.exports = [
 		'mui/prefer-named-imports': 'warn',
 		'mui/no-literal-colors': 'warn',
 		'mui/no-grid-alias': 'warn'
+		'mui/no-single-child-in-grid': 'warn',
+		'mui/no-single-child-in-stack': 'warn'
 	},
 ]
 ```
@@ -46,6 +48,8 @@ module.exports = [
 - [prefer-named-imports](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
 - [no-literal-color](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-literal-color.md)
 - [no-grid-alias](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-grid-alias.md)
+- [no-single-child-in-grid](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-grid.md)
+- [no-single-child-in-stack](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-stack.md)
 
 ## Credits
 
