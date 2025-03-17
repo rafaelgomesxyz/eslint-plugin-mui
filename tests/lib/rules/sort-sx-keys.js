@@ -11,9 +11,9 @@ const rule = require('../../../lib/rules/sort-sx-keys');
 const ruleTester = new RuleTester();
 
 ruleTester.run('sort-sx-keys', rule, {
-	valid: [
-		{
-			code: `
+  valid: [
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -29,15 +29,15 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: [],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      options: [],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -56,15 +56,15 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: [],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      options: [],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -80,15 +80,15 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: ['custom', ['left', 'right']],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      options: ['custom', ['left', 'right']],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -104,15 +104,15 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: ['asc'],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      options: ['asc'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -128,18 +128,18 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: ['desc'],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-	],
+      options: ['desc'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  ],
 
-	invalid: [
-		{
-			code: `
+  invalid: [
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -155,7 +155,7 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			output: `
+      output: `
         var Header = (
           <Box
             sx={{
@@ -171,19 +171,19 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			errors: [
-				"Expected object keys to be in order. 'right' should be before 'left'.",
-				"Expected object keys to be in order. 'width' should be before 'height'.",
-			],
-			options: [],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      errors: [
+        "Expected object keys to be in order. 'right' should be before 'left'.",
+        "Expected object keys to be in order. 'width' should be before 'height'.",
+      ],
+      options: [],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -202,7 +202,7 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			output: `
+      output: `
         var Header = (
           <Box
             sx={{
@@ -221,16 +221,16 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			errors: ["Expected object keys to be in order. 'padding' should be before '& >*'."],
-			options: [],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      errors: ["Expected object keys to be in order. 'padding' should be before '& >*'."],
+      options: [],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -246,7 +246,7 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			output: `
+      output: `
         var Header = (
           <Box
             sx={{
@@ -262,16 +262,16 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			errors: ["Expected object keys to be in order. 'left' should be before 'right'."],
-			options: ['custom', ['left', 'right']],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      errors: ["Expected object keys to be in order. 'left' should be before 'right'."],
+      options: ['custom', ['left', 'right']],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -287,7 +287,7 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			output: `
+      output: `
         var Header = (
           <Box
             sx={{
@@ -303,20 +303,20 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: ['asc'],
-			errors: [
-				"Expected object keys to be in order. 'right' should be before 'top'.",
-				"Expected object keys to be in order. 'left' should be before 'right'.",
-				"Expected object keys to be in order. 'height' should be before 'width'.",
-			],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-		{
-			code: `
+      options: ['asc'],
+      errors: [
+        "Expected object keys to be in order. 'right' should be before 'top'.",
+        "Expected object keys to be in order. 'left' should be before 'right'.",
+        "Expected object keys to be in order. 'height' should be before 'width'.",
+      ],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -332,7 +332,7 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			output: `
+      output: `
         var Header = (
           <Box
             sx={{
@@ -348,18 +348,18 @@ ruleTester.run('sort-sx-keys', rule, {
           />
         );
       `,
-			options: ['desc'],
-			errors: [
-				"Expected object keys to be in order. 'top' should be before 'position'.",
-				"Expected object keys to be in order. 'width' should be before 'left'.",
-				"Expected object keys to be in order. 'margin' should be before 'height'.",
-				"Expected object keys to be in order. 'padding' should be before 'margin'.",
-			],
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
-		},
-	],
+      options: ['desc'],
+      errors: [
+        "Expected object keys to be in order. 'top' should be before 'position'.",
+        "Expected object keys to be in order. 'width' should be before 'left'.",
+        "Expected object keys to be in order. 'margin' should be before 'height'.",
+        "Expected object keys to be in order. 'padding' should be before 'margin'.",
+      ],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  ],
 });
