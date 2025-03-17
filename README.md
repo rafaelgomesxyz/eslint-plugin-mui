@@ -35,6 +35,7 @@ module.exports = [
 		'mui/sort-sx-keys': 'warn',
 		'mui/prefer-named-imports': 'warn',
 		'mui/no-literal-colors': 'warn',
+		'mui/no-grid-alias': 'warn'
 	},
 ]
 ```
