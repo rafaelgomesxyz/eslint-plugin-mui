@@ -9,17 +9,17 @@ const { RuleTester } = require('eslint');
 const rule = require('../../../lib/rules/no-literal-colors');
 
 const ruleTester = new RuleTester({
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
+  },
 });
 
 ruleTester.run('no-literal-colors', rule, {
-    valid: [
-        {
-            code: `
+  valid: [
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -28,9 +28,9 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-        },
-        {
-            code: `
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -39,12 +39,12 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-        },
-    ],
+    },
+  ],
 
-    invalid: [
-        {
-            code: `
+  invalid: [
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -53,17 +53,17 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-            errors: [
-                {
-                    messageId: 'noLiteralColors',
-                    data: {
-                        value: '#fff',
-                    },
-                },
-            ],
-        },
+      errors: [
         {
-            code: `
+          messageId: 'noLiteralColors',
+          data: {
+            value: '#fff',
+          },
+        },
+      ],
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -72,17 +72,17 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-            errors: [
-                {
-                    messageId: 'noLiteralColors',
-                    data: {
-                        value: '#123456',
-                    },
-                },
-            ],
-        },
+      errors: [
         {
-            code: `
+          messageId: 'noLiteralColors',
+          data: {
+            value: '#123456',
+          },
+        },
+      ],
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -91,17 +91,17 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-            errors: [
-                {
-                    messageId: 'noLiteralColors',
-                    data: {
-                        value: 'red',
-                    },
-                },
-            ],
-        },
+      errors: [
         {
-            code: `
+          messageId: 'noLiteralColors',
+          data: {
+            value: 'red',
+          },
+        },
+      ],
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -110,17 +110,17 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-            errors: [
-                {
-                    messageId: 'noLiteralColors',
-                    data: {
-                        value: 'black',
-                    },
-                },
-            ],
-        },
+      errors: [
         {
-            code: `
+          messageId: 'noLiteralColors',
+          data: {
+            value: 'black',
+          },
+        },
+      ],
+    },
+    {
+      code: `
         var Header = (
           <Box
             sx={{
@@ -129,14 +129,14 @@ ruleTester.run('no-literal-colors', rule, {
           />
         );
       `,
-            errors: [
-                {
-                    messageId: 'noLiteralColors',
-                    data: {
-                        value: 'aliceblue',
-                    },
-                },
-            ],
+      errors: [
+        {
+          messageId: 'noLiteralColors',
+          data: {
+            value: 'aliceblue',
+          },
         },
-    ],
+      ],
+    },
+  ],
 });

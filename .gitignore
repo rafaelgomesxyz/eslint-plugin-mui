@@ -1,3 +1,1 @@
-/.vscode/
-/node_modules/
-/pnpm-lock.yaml
+node_modules

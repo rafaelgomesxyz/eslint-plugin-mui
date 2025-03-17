@@ -47,8 +47,8 @@ import { Close } from '@mui/icons-material';
 const MyComponent = () => <Close />;
       `,
       errors: [
-        { message: "Use named imports for MUI icons instead of default imports." },
-        { message: "Replace <CloseIcon /> with <Close />" },
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
       ],
     },
     {
@@ -61,8 +61,8 @@ import { ChevronLeft } from '@mui/icons-material';
 const MyComponent = () => <ChevronLeft />;
       `,
       errors: [
-        { message: "Use named imports for MUI icons instead of default imports." },
-        { message: "Replace <ChevronLeftIcon /> with <ChevronLeft />" },
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <ChevronLeftIcon /> with <ChevronLeft />' },
       ],
     },
     {
@@ -75,8 +75,8 @@ import { ChevronRight } from '@mui/icons-material';
 const MyComponent = () => <ChevronRight />;
       `,
       errors: [
-        { message: "Use named imports for MUI icons instead of default imports." },
-        { message: "Replace <ChevronRightIcon /> with <ChevronRight />" },
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <ChevronRightIcon /> with <ChevronRight />' },
       ],
     },
     {
@@ -89,8 +89,8 @@ import { Add } from '@mui/icons-material';
 const MyComponent = () => <Add />;
       `,
       errors: [
-        { message: "Use named imports for MUI icons instead of default imports." },
-        { message: "Replace <AddIcon /> with <Add />" },
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <AddIcon /> with <Add />' },
       ],
     },
     {
@@ -101,8 +101,119 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';`,
       output: `
 import { PersonOutlineOutlined, Settings, HelpOutline } from '@mui/icons-material';
 `,
+      errors: [{ message: 'Use named imports for MUI icons instead of default imports.' }],
+    },
+    {
+      code: `
+import CloseIcon from '@mui/icons-material/Close';
+import { Snackbar, LinearProgress, Alert, IconButton, Typography, Stack, AlertTitle } from '@mui/material';
+const MyComponent = () => (
+  <IconButton size='small' aria-label='close' color='inherit' onClick={() => {}}>
+    <CloseIcon fontSize='small' />
+  </IconButton>
+);
+      `,
+      output: `
+import { Close } from '@mui/icons-material';
+import { Snackbar, LinearProgress, Alert, IconButton, Typography, Stack, AlertTitle } from '@mui/material';
+const MyComponent = () => (
+  <IconButton size='small' aria-label='close' color='inherit' onClick={() => {}}>
+    <Close fontSize='small' />
+  </IconButton>
+);
+      `,
       errors: [
-        { message: "Use named imports for MUI icons instead of default imports." },
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
+      ],
+    },
+    {
+      code: `
+import CloseIcon from '@mui/icons-material/Close';
+const MyComponent = () => (
+  <div>
+    <span>Close the dialog</span>
+    <CloseIcon />
+  </div>
+);
+      `,
+      output: `
+import { Close } from '@mui/icons-material';
+const MyComponent = () => (
+  <div>
+    <span>Close the dialog</span>
+    <Close />
+  </div>
+);
+      `,
+      errors: [
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
+      ],
+    },
+    {
+      code: `
+import CloseIcon from '@mui/icons-material/Close';
+const MyComponent = () => (
+  <Alert icon={<CloseIcon />} severity="error">
+    This is an error alert.
+  </Alert>
+);
+      `,
+      output: `
+import { Close } from '@mui/icons-material';
+const MyComponent = () => (
+  <Alert icon={<Close />} severity="error">
+    This is an error alert.
+  </Alert>
+);
+      `,
+      errors: [
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
+      ],
+    },
+    {
+      code: `
+import CloseIcon from '@mui/icons-material/Close';
+const MyComponent = () => (
+  <Alert icon={<CloseIcon />} severity="error"
+    action={
+      <IconButton
+        aria-label="close"
+        color="inherit"
+        size="small"
+        onClick={() => {}}
+      >
+        <CloseIcon fontSize="inherit" />
+      </IconButton>
+    }
+  >
+    This is an error alert.
+  </Alert>
+);`,
+      output: `
+import { Close } from '@mui/icons-material';
+const MyComponent = () => (
+  <Alert icon={<Close />} severity="error"
+    action={
+      <IconButton
+        aria-label="close"
+        color="inherit"
+        size="small"
+        onClick={() => {}}
+      >
+        <Close fontSize="inherit" />
+      </IconButton>
+    }
+  >
+    This is an error alert.
+  </Alert>
+);`,
+      errors: [
+        { message: 'Use named imports for MUI icons instead of default imports.' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
+        { message: 'Replace <CloseIcon /> with <Close />' },
       ],
     },
   ],
