@@ -44,6 +44,7 @@ module.exports = [
 - [sort-sx-keys](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
 - [prefer-named-imports](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
 - [no-literal-color](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-literal-color.md)
+- [no-grid-alias](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-grid-alias.md)
 
 ## Credits
 
