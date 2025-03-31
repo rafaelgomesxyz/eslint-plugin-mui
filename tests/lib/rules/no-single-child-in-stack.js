@@ -3,7 +3,7 @@ const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({
   parserOptions: {
-    ecmaVersion: 2015,
+    ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -11,7 +11,7 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('no-single-child-in-grid', rule, {
+ruleTester.run('no-single-child-in-stack', rule, {
   valid: [
     {
       code: `
@@ -36,6 +36,53 @@ ruleTester.run('no-single-child-in-grid', rule, {
             <Box>
               <Typography>foo</Typography>
             </Box>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        import { Stack, Box } from '@mui/material';
+
+        export const Component = () => {
+          return (
+            <Stack>
+              {['a', 'b', 'c'].map((letter) => (
+                <Box key={letter}>{letter}</Box>
+              ))}
+            </Stack>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        import { Stack, Box } from '@mui/material';
+
+        export const Component = () => {
+          const items = ['a', 'b', 'c', 'd'];
+
+          return (
+            <Stack>
+              {items.filter(item => item !== 'c').map((item) => (
+                <Box key={item}>{item}</Box>
+              ))}
+            </Stack>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        import { Stack, Box } from '@mui/material';
+
+        export const Component = () => {
+          return (
+            <Stack>
+              {Array.from(['a', 'b', 'c']).map((item) => (
+                <Box key={item}>{item}</Box>
+              ))}
+            </Stack>
           );
         };
       `,
