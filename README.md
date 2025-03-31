@@ -58,4 +58,5 @@ This plugin is based on eslint-plugin-sort-keys-fix (https://github.com/leo-bune
 ## Contributors
 
 - [rkristelijn](https://github.com/rkristelijn)
+- [Ensar025](https://github.com/Ensar025)
 - [rafaelgomesxyz](https://github.com/rafaelgomesxyz) (original author)
