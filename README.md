@@ -2,9 +2,6 @@
 
 Custom ESLint rules for MUI.
 
-> Note: This is a fork of [eslint-plugin-mui](https://github.com/rafaelgomesxyz/eslint-plugin-mui) that seems to be not
-> being worked on.
-
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
@@ -27,29 +24,28 @@ Add `mui` to the plugins section of your `eslint.config.cjs` configuration file.
 const muiPlugin = require('eslint-plugin-mui');
 
 module.exports = [
-	plugins: {
-		mui: muiPlugin,
-	},
-	rules: {
-		// adding the recommended rules
-		'mui/sort-sx-keys': 'warn',
-		'mui/prefer-named-imports': 'warn',
-		'mui/no-literal-colors': 'warn',
-		'mui/no-grid-alias': 'warn'
-		'mui/no-single-child-in-grid': 'warn',
-		'mui/no-single-child-in-stack': 'warn'
-	},
+  plugins: {
+    mui: muiPlugin,
+  },
+  rules: {
+    'mui/sort-sx-keys': 'warn',
+    'mui/prefer-named-imports': 'warn',
+    'mui/no-literal-colors': 'warn',
+    'mui/no-grid-alias': 'warn',
+    'mui/no-single-child-in-grid': 'warn',
+    'mui/no-single-child-in-stack': 'warn'
+  },
 ]
 ```
 
 ## Supported Rules
 
-- [sort-sx-keys](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
-- [prefer-named-imports](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
-- [no-literal-color](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-literal-color.md)
-- [no-grid-alias](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-grid-alias.md)
-- [no-single-child-in-grid](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-grid.md)
-- [no-single-child-in-stack](https://github.com/rkristelijn/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-stack.md)
+- [sort-sx-keys](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/sort-sx-keys.md)
+- [prefer-named-imports](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/prefer-named-imports.md)
+- [no-literal-color](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/no-literal-color.md)
+- [no-grid-alias](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/no-grid-alias.md)
+- [no-single-child-in-grid](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-grid.md)
+- [no-single-child-in-stack](https://github.com/rafaelgomesxyz/eslint-plugin-mui/tree/main/docs/rules/no-single-child-in-stack.md)
 
 ## Credits
 
@@ -57,6 +53,6 @@ This plugin is based on eslint-plugin-sort-keys-fix (https://github.com/leo-bune
 
 ## Contributors
 
-- [rkristelijn](https://github.com/rkristelijn)
 - [Ensar025](https://github.com/Ensar025)
-- [rafaelgomesxyz](https://github.com/rafaelgomesxyz) (original author)
+- [rafaelgomesxyz](https://github.com/rafaelgomesxyz)
+- [rkristelijn](https://github.com/rkristelijn)
