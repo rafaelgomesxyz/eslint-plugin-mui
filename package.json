@@ -1,36 +1,36 @@
 {
-	"name": "eslint-plugin-mui",
-	"version": "0.1.1",
-	"description": "Custom ESLint rules for MUI",
-	"keywords": [
-		"eslint",
-		"eslint-plugin",
-		"mui",
-		"material-ui"
-	],
-	"homepage": "https://github.com/rafaelgomesxyz/eslint-plugin-mui",
-	"bugs": "https://github.com/rafaelgomesxyz/eslint-plugin-mui/issues",
-	"author": "rafaelgomesxyz",
-	"main": "lib/index.js",
-	"repository": "github:rafaelgomesxyz/eslint-plugin-mui",
-	"scripts": {
-		"lint": "eslint .",
-		"test": "mocha tests --recursive"
-	},
-	"dependencies": {
-		"requireindex": "^1.1.0"
-	},
-	"devDependencies": {
-		"eslint": "^7.1.0",
-		"eslint-plugin-eslint-plugin": "^3.2.0",
-		"eslint-plugin-node": "^11.0.0",
-		"mocha": "^9.0.0"
-	},
-	"peerDependencies": {
-		"eslint": ">=6"
-	},
-	"engines": {
-		"node": "12.x || 14.x || >= 16"
-	},
-	"license": "MIT"
+  "name": "eslint-plugin-mui",
+  "version": "1.2.1",
+  "description": "Extended custom ESLint rules for MUI",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "mui",
+    "material-ui"
+  ],
+  "homepage": "https://github.com/rafaelgomesxyz/eslint-plugin-mui",
+  "bugs": "https://github.com/rafaelgomesxyz/eslint-plugin-mui/issues",
+  "author": "rkristelijn",
+  "main": "lib/index.js",
+  "repository": "github:rafaelgomesxyz/eslint-plugin-mui",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-plugin-eslint-plugin": "^3.2.0",
+    "eslint-plugin-node": "^11.0.0",
+    "mocha": "^9.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=6"
+  },
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
+  },
+  "license": "MIT"
 }
